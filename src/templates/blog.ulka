@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% $assets('../style.css') %}" />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        {% $import('../partials/nav.ulka', { path: "/blog" }) %}
+       <div class="blog-title">{% values.frontMatter.title %}</div>
+        <span class="blog-date">
+          {% new Date(values.frontMatter.date).toDateString() %} | {% values.fields.readingTime.text %}
+        </span>
+        <div class="blog-body">
+            {% data %}
+        </div>
+      </main>
+      <footer>&copy; 2020, coderosh</footer>
+    </div>
+  </body>
+</html>

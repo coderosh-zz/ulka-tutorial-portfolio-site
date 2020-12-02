@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Home | {% info.configs.siteMetaData.title %}</title>
+   <link rel="stylesheet" href="{% $assets('../style.css') %}" />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        {% $import('../partials/nav.ulka', { path: "/" }) %}
+
+        <h2>Hey, I am Roshan 👋</h2>
+        <blockquote>creator of ulka js</blockquote>
+        <br />
+        This is my portfolio. yayyy!!!
+      </main>
+      <footer>&copy; 2020, coderosh</footer>
+    </div>
+  </body>
+</html>

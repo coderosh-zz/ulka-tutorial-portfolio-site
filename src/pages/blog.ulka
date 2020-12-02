@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog | {% info.configs.siteMetaData.title %}</title>
+    <link rel="stylesheet" href="{% $assets('../style.css') %}" />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        {% $import('../partials/nav.ulka', { path: "/blog" }) %}
+       <div id="blogs">
+        {%
+               contents
+                .blog
+                .slice()
+                .sort((a, b) => new Date(b.values.frontMatter.date) - new Date(a.values.frontMatter.date))
+                .map(content =>  `
+                    <div class="blog-item">
+                    <a href="${content.link}">
+                        <div class="blog-title">${ content.values.frontMatter.title }</div>
+                    </a>
+                    <div class="blog-desc">
+                        ${ content.values.frontMatter.description }
+                    </div>
+                    <div class="blog-date">
+                        ${ new Date(content.values.frontMatter.date).toDateString() }
+                    </div>
+                    </div>
+                `)
+        %}
+        </div>
+      </main>
+      <footer>&copy; 2020, coderosh</footer>
+    </div>
+  </body>
+</html>

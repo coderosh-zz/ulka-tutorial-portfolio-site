@@ -1,0 +1,9 @@
+<nav>
+  <div class="title">
+    <a style="{% path === '/' ? 'color:crimson': '' %}" href="/">coderosh</a>
+  </div>
+  <ul id="nav-links">
+    <li><a style="{% path === '/about' ? 'color:crimson': '' %}" href="/about">about</a></li>
+    <li><a style="{% path === '/blog' ? 'color:crimson': '' %}" href="/blog">blog</a></li>
+  </ul>
+</nav>
